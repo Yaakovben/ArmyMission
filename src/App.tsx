@@ -6,7 +6,7 @@ import List from './components/List'
 import Add from './components/Add'
 
 
-interface Props{
+interface Mission{
   _id:string
   name: string,
   status: string,
@@ -16,7 +16,7 @@ interface Props{
 }
 
 function App() {
-  const [listMission, setListMission] = useState<Props[]>([])
+  const [listMission, setListMission] = useState<Mission[]>([])
   useEffect(()=>{
       (async() =>{
           const result = await fetch("https://reactexambackend.onrender.com/missions/:8851160")
@@ -27,7 +27,7 @@ function App() {
 
   return (
     <>
-    <Add/>
+    <Add setListMission={setListMission} listMission={listMission}/>
     <List listMission={listMission}/>
 
   
