@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e4e4e4;
+}
+
+.app {
+  background-color: #fff;
+  height: 100%;
+  width: 70%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 1.5em;
+}
