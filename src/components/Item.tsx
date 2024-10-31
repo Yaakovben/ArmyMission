@@ -19,7 +19,8 @@ export default function Item({_id,name,status,priority,description}:Props) {
       <h2>Description: {description} </h2>
       </div>
       <button className='delete'>Delete</button>
-      {}
+      {status !="Completed" ? <button className='progrec'>Progrec</button> : ""}
+      
     </div>
 
   )
