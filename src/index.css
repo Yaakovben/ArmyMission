@@ -12,6 +12,11 @@
   height: 100vh;
   background-color: #e4e4e4;
 }
+.titel{
+  color: green;
+  position: relative;
+  margin-top: 0px;
+}
 
 .app {
   background-color: #fff;
@@ -20,4 +25,35 @@
   max-width: 550px;
   margin: 0 auto;
   padding: 1.5em;
+}
+.inputs{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+  background-color: green;
+}
+.buttonAdd{
+  background-color: red;
+  height: 20px;
+  width: 150px;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+
+}
+.item{
+  background-color: green;
+  display:flex;
+  justify-content:space-between;
+}
+.delete{
+  background-color: red;
+  width: 65px;
+  height: 30px;
+  margin-right: 100px;
+  margin-top: 40px;
 }
