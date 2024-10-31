@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 interface Mission{
   _id:string
   name: string,
@@ -14,11 +13,8 @@ interface Props{
 export default function Add({setListMission, listMission}:Props) {
   const [inputname, setInputValue] = useState('');
   const [inputDescription, setInputDescription] = useState('');
-  const [selectStatus, setselectStatus] = useState('');
-  const [selectPriority, setselectPriority] = useState('');
-  
-
-  
+  const [selectStatus, setselectStatus] = useState('Pending');
+  const [selectPriority, setselectPriority] = useState('Low');
   const handleChangeName = (event:any) => {
     setInputValue(event.target.value);
   };
@@ -31,15 +27,9 @@ export default function Add({setListMission, listMission}:Props) {
   const handleChangePriority = (event:any) => {
     setselectPriority(event.target.value);
   };
-
-
-
-
-
-
-
   const result = async() =>{
-    const response = await fetch("https://reactexambackend.onrender.com/missions/:8851160", {
+    if(inputname=="" || inputDescription == ""){ alert("Name and Description is required ")}
+    const response = await fetch("https://reactexambackend.onrender.com/missions/8851160", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
@@ -49,41 +39,32 @@ export default function Add({setListMission, listMission}:Props) {
       referrerPolicy: "no-referrer",
       body: JSON.stringify(
         {"name": inputname,
-        "status": selectStatus,
-        "priority":"High",
-        "description": inputDescription
-        }),
+          "status": selectStatus,
+          "priority":selectPriority,
+          "description": inputDescription
+          }),
     });
+    setInputValue("")
+    setInputDescription("")
     setListMission([...listMission])
     return response.json();
-
-
-
-
-
   }
-  
-
-
-
-
   return (
     <div className='add'>
-        <h1 className='titel'> Military Operations Dassboard </h1>
+        <h1 className='titel'> Military Operations Dashboard </h1>
         <div className='inputs'>
-            <input type='text'placeholder='Enter name' onChange={handleChangeName}></input>
-            <select name="status" onChange={handleChangeStatus}>
+            <input type='text'placeholder='Enter name' onChange={handleChangeName} className='addMission'></input>
+            <select className='addMission' name="status" onChange={(e) => handleChangeStatus(e)}>
               <option value="Pending">Pending</option>
-              <option value="Progress">Progress</option>
+              <option value="In Progress">In Progress</option>
               <option value="Completed">Completed</option>         
             </select>
-            <select name="Priority" onChange={handleChangePriority} >
+            <select className='addMission' name="Priority" onChange={(e) => handleChangePriority(e)} >
               <option value="Low">Low</option>
               <option value="High">High</option>
             </select>
-            <input type='text'placeholder='Enter description' onChange={handleChangeDescription}></input>
+            <input className='addMission' type='text'placeholder='Enter description' onChange={handleChangeDescription}></input>
             <button className='buttonAdd' onClick={result}>Add Mission</button>
-
         </div>
     </div>
   )

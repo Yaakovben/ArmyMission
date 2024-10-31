@@ -32,11 +32,13 @@
   padding: 10px;
   gap: 5px;
   background-color: green;
+  text-align: center;
 }
 .buttonAdd{
   background-color: red;
-  height: 20px;
+  height: 35px;
   width: 150px;
+  border-radius: 5px;
 }
 .list{
   display: flex;
@@ -49,20 +51,35 @@
   background-color: green;
   display:flex;
   justify-content:space-between;
+  padding: 4px;
+  border: 2px solid white;
 }
 .delete{
-  background-color: red;
+  background-color: black;
+  color: white;
   width: 65px;
   height: 30px;
   margin-right: 100px;
   margin-top: 40px;
+  border-radius: 5px;
 }
+
+
 
 .progrec{
-  background-color: red;
+  background-color: black;
+  color: white;
   width: 65px;
   height: 30px;
   margin-right: 100px;
   margin-top: 40px;
-
+  border-radius: 5px;
 }
+
+.red{background-color: rgb(255, 3, 3);}
+
+.orenge{background-color: #F6EB03}
+
+.green{background-color:#12F709;}
+
+.mission{color:  rgb(255, 3, 3);;}
