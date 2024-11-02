@@ -28,7 +28,7 @@ export default function Add({setListMission, listMission}:Props) {
     setselectPriority(event.target.value);
   };
   const result = async() =>{
-    if(inputname=="" || inputDescription == ""){ alert("Name and Description is required ")}
+    if(inputname=="" || inputDescription == ""){ alert("Name and Description is required ❗❗❗")}
     const response = await fetch("https://reactexambackend.onrender.com/missions/8851160", {
       method: "POST",
       mode: "cors",
@@ -44,6 +44,7 @@ export default function Add({setListMission, listMission}:Props) {
           "description": inputDescription
           }),
     });
+
     setInputValue("")
     setInputDescription("")
     setListMission([...listMission])

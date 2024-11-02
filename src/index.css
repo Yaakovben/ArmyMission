@@ -45,7 +45,12 @@
   flex-direction: column;
   padding: 5px;
   gap: 10px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto; 
+}
 
+.mission{
+  overflow: hidden;
 }
 .item{
   background-color: green;
@@ -83,3 +88,9 @@
 .green{background-color:#12F709;}
 
 .mission{color:  rgb(255, 3, 3);;}
+
+
+.addMission{
+  font-size: 20px;
+ border-radius: 8px;
+}
