@@ -10,7 +10,7 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: #e4e4e4;
+  background-color:rgb(10, 62, 23);
 }
 .titel{
   color: green;
@@ -49,9 +49,7 @@
   overflow-y: auto; 
 }
 
-.mission{
-  overflow: hidden;
-}
+
 .item{
   background-color: green;
   display:flex;
